@@ -2,33 +2,35 @@ package conta;
 
 import java.util.Scanner;
 
-import conta.model.conta;
+import conta.model.Conta;
+import conta.model.ContaCorrente;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
-
 		Scanner leia = new Scanner(System.in);
 
 		int opcao, numero, agencia, tipo, aniversario, numeroDestino;
 		String titular;
 		float saldo, limite, valor;
 
-		conta c1 = new Conta(1, 123, 1, "Ketelyn Medina Martins", 100000.00f);
+		Conta c1 = new Conta(1, 123, 1, "Ketelyn Medina", 100000.00f);
 		c1.visualizar();
 
-		System.out.println("\nSaldo da Conta " + c1.getSaldo() + "\n");
+		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Eliana Rodrigues", 100000.00f, 1000.00f);
+		cc1.visualizar();
 
-		c1.setTitular("\nKetelyn Medina Martins");
+		cc1.sacar(100900);
 
-		c1.visualizar();
+		cc1.visualizar();
 
-		c1.sacar(200000.0f);
-		c1.visualizar();
+		cc1.depositar(2000);
 
-		c1.depositar(2000.0f);
-		c1.visualizar();
+		cc1.visualizar();
+
+		Conta c2 = new Conta();
+		c2.visualizar();
 
 		while (true) {
 
@@ -68,7 +70,7 @@ public class Menu {
 			switch (opcao) {
 			case 1:
 				System.out.println("Criar Conta\n\n");
-				
+
 				System.out.println("Digite o Numero da Agência: ");
 				agencia = leia.nextInt();
 				System.out.println("Digite o Nome do Titular: ");

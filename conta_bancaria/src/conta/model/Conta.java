@@ -1,6 +1,6 @@
 package conta.model;
 
-public abstract class conta {
+public abstract class Conta {
 
 	private int numero;
 	private int agencia;
@@ -8,13 +8,15 @@ public abstract class conta {
 	private String titular;
 	private float saldo;
 
-	public conta(int numero, int agencia, int tipo, String titula, float saldo) {
+	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
 		this.numero = numero;
 		this.agencia = agencia;
 		this.tipo = tipo;
 		this.titular = titular;
 		this.saldo = saldo;
 	}
+
+	public Conta() {}
 
 	public int getNumero() {
 		return numero;
@@ -61,10 +63,11 @@ public abstract class conta {
 			System.out.println("\nSaldo insuficiente");
 			return false;
 
+		} else {
+			this.setSaldo(this.getSaldo() - valor);
+			return true;
+			
 		}
-		this.setSaldo(this.getSaldo() - valor);
-		return true;
-
 	}
 
 	public void depositar(float valor) {
@@ -74,7 +77,8 @@ public abstract class conta {
 
 	public void visualizar() {
 		String tipo = "";
-		switch (this.tipo) {
+		
+		switch (this.getTipo()) {
 		case 1:
 			tipo = "Conta Corrente";
 			break;
@@ -86,11 +90,11 @@ public abstract class conta {
 		System.out.println("++++++++++++++++++++++++++++");
 		System.out.println("       Dados da Conta       ");
 		System.out.println("++++++++++++++++++++++++++++");
-		System.out.println("Numero da Conta: " + this.numero);
-		System.out.println("Numero da Agencia: " + this.agencia);
+		System.out.println("Numero da Conta: " + this.getNumero());
+		System.out.println("Numero da Agência: " + this.getAgencia());
 		System.out.println("Tipo da Conta: " + tipo);
-		System.out.println("Nome do Titular da Conta: " + this.titular);
-		System.out.println("Saldo da Conta: " + this.saldo);
+		System.out.println("Nome do Titular da Conta: " + this.getTitular());
+		System.out.println("Saldo da Conta: " + this.getSaldo());
 	}
 
 }
