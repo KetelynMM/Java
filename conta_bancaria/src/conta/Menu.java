@@ -2,6 +2,7 @@ package conta;
 
 import java.util.Scanner;
 
+import conta.model.conta;
 import conta.util.Cores;
 
 public class Menu {
@@ -13,6 +14,7 @@ public class Menu {
 		int opcao, numero, agencia, tipo, aniversario, numeroDestino;
 		String titular;
 		float saldo, limite, valor;
+		
 
 		while (true) {
 
