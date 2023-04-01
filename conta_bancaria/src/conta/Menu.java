@@ -14,7 +14,21 @@ public class Menu {
 		int opcao, numero, agencia, tipo, aniversario, numeroDestino;
 		String titular;
 		float saldo, limite, valor;
-		
+
+		conta c1 = new Conta(1, 123, 1, "Ketelyn Medina Martins", 100000.00f);
+		c1.visualizar();
+
+		System.out.println("\nSaldo da Conta " + c1.getSaldo() + "\n");
+
+		c1.setTitular("\nKetelyn Medina Martins");
+
+		c1.visualizar();
+
+		c1.sacar(200000.0f);
+		c1.visualizar();
+
+		c1.depositar(2000.0f);
+		c1.visualizar();
 
 		while (true) {
 
@@ -42,10 +56,10 @@ public class Menu {
 			opcao = leia.nextInt();
 
 			if (opcao == 9) {
-				
-				System.out.println();
+
+				System.out.println("                                                          ");
 				System.out.println("   \nBanco do Brazil com Z - O seu Futuro começa aqui!    ");
-				System.out.println();
+				System.out.println("__________________________________________________________");
 				sobre();
 				leia.close();
 				System.exit(0);
@@ -54,6 +68,7 @@ public class Menu {
 			switch (opcao) {
 			case 1:
 				System.out.println("Criar Conta\n\n");
+				
 				System.out.println("Digite o Numero da Agência: ");
 				agencia = leia.nextInt();
 				System.out.println("Digite o Nome do Titular: ");
@@ -182,9 +197,10 @@ public class Menu {
 	}
 
 	public static void sobre() {
-		System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "*************************************************************");
-		System.out.println("                    Ketelyn Medina                           ");
-		System.out.println("    ketelynmedina5@gamil.com -  https://github.com/KetelynMM ");
-		System.out.println("*************************************************************");
+		System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
+				+ "****************************************************************");
+		System.out.println("                    Ketelyn Medina                              ");
+		System.out.println("    ketelynmedina5@gamil.com -  https://github.com/KetelynMM    ");
+		System.out.println("****************************************************************");
 	}
 }
