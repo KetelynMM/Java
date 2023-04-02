@@ -52,6 +52,7 @@ public class Menu {
 			System.out.println("              9 - Sair                                    ");
 			System.out.println("                                                          ");
 			System.out.println("**********************************************************");
+			System.out.println("                                                          ");
 			System.out.println("Entre com a opção desejada:                               ");
 			System.out.println("                                                          " + Cores.TEXT_RESET);
 
