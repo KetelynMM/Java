@@ -5,13 +5,13 @@ import java.time.LocalDate;
 public class testa_cliente {
 
 	public static void main(String[] args) {
-		LocalDate data1 = LocalDate.of(1998, 03, 24);
-		LocalDate data2 = LocalDate.of(1972, 07, 05);
+		LocalDate data1 = LocalDate.of(2004, 07, 31);
+		LocalDate data2 = LocalDate.of(1971, 10, 03);
 
-		ClientePessoaFisica cliente1 = new ClientePessoaFisica("Lais Sales", data1, "(12) 99999-9999",
-				"email1@gmail.com", "Rua Tal, 123", "123.456.789-12");
-		ClientePessoaJuridica cliente2 = new ClientePessoaJuridica("Marisa Sales", data2, "(12) 99999-9999",
-				"email2@gmail.com", "Rua Tal, 123", "789.456.123-98");
+		ClientePessoaFisica cliente1 = new ClientePessoaFisica("Ketelyn Medina", data1, "(11) 92222-2222",
+				"Eemail@gmail.com", "Av. Cúrio, 860", "222.222.222-80");
+		ClientePessoaJuridica cliente2 = new ClientePessoaJuridica("Eliana Rodrigues", data2, "(12) 93333-3333",
+				"Kemail5@gmail.com", "Av. Cúrio, 860", "333.333.333-90");
 
 		cliente1.visualizar();
 		System.out.println("\n");
